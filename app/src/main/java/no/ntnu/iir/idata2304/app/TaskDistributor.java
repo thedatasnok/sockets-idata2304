@@ -17,7 +17,9 @@ public class TaskDistributor implements ServerRequestHandler {
     "NTNU.", "statement 1",
     "NTNU?", "question 1",
     "Will Will Smith smith?", "question 4",
-    "Lorem ipsum.", "statement 2"
+    "Lorem ipsum.", "statement 2",
+    "?", "question 0",
+    ".", "statement 0"
   );
 
   private static final String[] TASKS = TASK_ANSWER_MAP.keySet().toArray(String[]::new);
@@ -26,13 +28,18 @@ public class TaskDistributor implements ServerRequestHandler {
     this.currentTaskIndex = 0;
   }
 
-  public String getCurrentTask() {
+  /**
+   * Returns the currently assigned task.
+   * 
+   * @return the currently assigned task
+   */
+  private String getCurrentTask() {
     return TASKS[currentTaskIndex % TASKS.length];
   }
 
   @Override
   public byte[] onRequest(byte[] requestData, int requestLength, InetAddress clientAddress) {
-    log.info("Handling request from client @ {}", clientAddress.getHostName());
+    log.info("Handling request from client @ {}", clientAddress.getHostAddress());
 
     String requestString = new String(requestData, 0, requestLength);
     String responseString;
