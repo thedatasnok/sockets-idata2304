@@ -1,0 +1,20 @@
+rootProject.name = 'sockets-idata2304'
+
+dependencyResolutionManagement {
+  versionCatalogs {
+    libs {
+      library('lombok', 'org.projectlombok:lombok:1.18.24')
+      library('slf4j', 'org.slf4j:slf4j-simple:2.0.3')
+    }
+  }
+}
+
+include 'app'
+
+include 'shared'
+
+include 'tcp-client'
+include 'tcp-server'
+
+include 'udp-client'
+include 'udp-server'

@@ -1,0 +1,15 @@
+plugins {
+  id 'no.ntnu.iir.idata2304.java-application-conventions'
+}
+
+dependencies {
+  implementation project(':tcp-client')
+  implementation project(':tcp-server')
+  
+  implementation project(':udp-client')
+  implementation project(':udp-server')
+  
+  implementation libs.slf4j
+  implementation libs.lombok
+  annotationProcessor libs.lombok
+}

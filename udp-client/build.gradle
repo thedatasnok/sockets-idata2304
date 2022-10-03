@@ -1,0 +1,11 @@
+plugins {
+  id 'no.ntnu.iir.idata2304.java-library-conventions'
+}
+
+dependencies {
+  implementation project(':shared')
+  
+  implementation libs.slf4j
+  implementation libs.lombok
+  annotationProcessor libs.lombok
+}
