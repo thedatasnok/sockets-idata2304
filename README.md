@@ -2,7 +2,7 @@
 
 This repository how simple clients and servers can be implemented using socket programming Java for both TCP and UDP.
 
-The application code is independent of TCP and UDP - allowing us to share business logic between them. 
+The application code is independent of the transport protocol - allowing us to share business logic between them. 
 
 
 The project is split into one project per problem, with some shared logic:
